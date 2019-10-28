@@ -222,13 +222,3 @@ a.menu:focus{
  	font-weight: bolder;
  }
 
-.bio-left{
-	width:480px;
-	position: absolute;
-	float: left;
-}
-.bio-right{
-	width:480px;
-	position: absolute;
-	float: left;
-}
