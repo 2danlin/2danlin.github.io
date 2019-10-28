@@ -222,4 +222,9 @@ a.menu:focus{
  	font-weight: bolder;
  }
 
-
+.bio-left{
+	width:480px;
+}
+.bio-right{
+	width:480px;
+}
