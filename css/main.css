@@ -40,10 +40,6 @@ ul.posts li {
     list-style: none;
     }
 
-#bio{
-	width: 960px;
-	float: left;
-}
 .bio-left{
 	width:480px;
 	position: absolute;
