@@ -12,9 +12,11 @@ nav ul li, footer ul li {
     display: inline;
     margin-right: 20px;
 }
-a:hover {
-    text-decoration: underline;
-}
+a,a:hover,a:focus {
+	text-decoration: none;
+	outline: 0;
+	color:#575757;
+	}
 h1 {
     font-size: 3em;
     font-family:'Merriweather';
@@ -24,7 +26,7 @@ h2 {
     font-family:'Merriweather';
 }
 p {
-    font-size: 0.9em;
+    font-size: 1.1em;
     color: #333;
 }
 footer {
