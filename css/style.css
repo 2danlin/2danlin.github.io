@@ -221,4 +221,7 @@ a.menu:focus{
  	font: normal normal normal 20px avenir-lt-w01_85-heavy1475544,sans-serif;
  	font-weight: bolder;
  }
+.publist{
+	list-style-type:decimal;
+}
 
