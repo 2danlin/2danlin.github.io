@@ -2,16 +2,47 @@
 layout: default
 title: Dandan's Homepage
 ---
+<style>
+  .bio-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 24px;                 /* 照片和文字之间的间距 */
+  }
+  .bio-photo {
+    flex: 0 0 160px;           /* 照片区域固定宽度 */
+  }
+  .bio-photo img {
+    width: 160px;
+    height: auto;
+    border-radius: 8px;        /* 圆角；想要圆形照片改成 50%，并用正方形照片 */
+    display: block;
+  }
+  .bio-text {
+    flex: 1;
+    min-width: 0;
+  }
+  @media (max-width: 600px) {  /* 手机上改为上下排列 */
+    .bio-wrap {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
+
 <div class="blurb">
 	<h2>Bio</h2>
-	<div>My name is Dandan LIN (林丹丹). 
-		I am currently a researcher at Shenzhen Institute of Computing Sciences (SICS). In Jan. 2021, I received my Ph.D. degree 
-		in <a href="https://www.cse.ust.hk/">The Department of CSE</a> (Computer Science & Engineering) at
-		<a href="https://www.ust.hk/">HKUST</a> (The Hong Kong University of Science and Technology), 
-		supervised by <a href="https://home.cse.ust.hk/~raywong/">Prof. Raymond Chi-Wing Wong</a>.
-		Before Joining HKUST, I obtained my Bachelor’s degree of Engineering from <a href="https://www.scut.edu.cn/new/">SCUT</a> (South China University of Technology) in 2015.
-       
-	</div> 
+	<div class="bio-wrap">
+		<div class="bio-photo">
+			<img src="{{ '/img/citations.jpeg' | relative_url }}" alt="Dandan Lin">
+		</div>
+		<div class="bio-text">My name is Dandan LIN (林丹丹). 
+			I am currently a researcher at Shenzhen Institute of Computing Sciences (SICS). In Jan. 2021, I received my Ph.D. degree 
+			in <a href="https://www.cse.ust.hk/">The Department of CSE</a> (Computer Science & Engineering) at
+			<a href="https://www.ust.hk/">HKUST</a> (The Hong Kong University of Science and Technology), 
+			supervised by <a href="https://home.cse.ust.hk/~raywong/">Prof. Raymond Chi-Wing Wong</a>.
+			Before Joining HKUST, I obtained my Bachelor’s degree of Engineering from <a href="https://www.scut.edu.cn/new/">SCUT</a> (South China University of Technology) in 2015.
+		</div>
+	</div>
 </div><!-- /.blurb -->
 
 <div class="blurb">
@@ -22,7 +53,7 @@ title: Dandan's Homepage
 		<dt>- <strong>Applied Researcher</strong></dt> 
 		<dd><a>WeChat, Tencent Inc. </a>, China, Apr. 2021 - Jun. 2023 </dd> 
 		
-		<dt>- <strong>Reseach Intern</strong></dt> 
+		<dt>- <strong>Research Intern</strong></dt> 
 		<dd><a>Noah’s Ark Research Lab, Huawei </a>, Shenzhen, China, Sep. 2020 - Jan. 2021</dd> 
  		<dt>- <strong>Software Engineer Intern</strong></dt> 
 		<dd><a>Intel, Inc.</a>, Beijing, China, Jul. 2014 - Nov. 2014</dd> 
@@ -31,7 +62,7 @@ title: Dandan's Homepage
 		<dt>- <strong>Research Visitor</strong></dt> 
 		<dd><a>University College London</a>, London, United Kingdom, Nov. 2013 - Nov. 2013</dd>
 		<dt>- <strong>Research Visitor</strong></dt> 
-		<dd><a>Chinese Unversity of Hong Kong</a>, Hong Kong SAR, China, Nov. 2012 - Nov. 2012</dd>
+		<dd><a>Chinese University of Hong Kong</a>, Hong Kong SAR, China, Nov. 2012 - Nov. 2012</dd>
 	</dl> 
 </div><!-- /.blurb -->
 <div class="blurb">	
@@ -51,15 +82,15 @@ title: Dandan's Homepage
 		<dt>- <strong>Overseas High-Caliber Personnel (深圳海外高层次人才）</strong>, <a>Shenzhen Government</a>, Aug. 2021</dt> 
 		<dt>- <strong>Research Travel Grant</strong>, <a>HKUST</a>, Jan. 2020</dt>  
 		<dt>- <strong>Student Travel Grant</strong>, <a>jointly sponsored by the NSF, IEEE TCII, and ICDM2019</a>, Nov. 2019</dt>  
-		<dt>- <strong>The Second Runner-up of Hong Kong Computer Inteligence Competition</strong>, <a>Hong Kong Chapter, IEEE</a>, Aug. 2019</dt> 
+		<dt>- <strong>The Second Runner-up of Hong Kong Computer Intelligence Competition</strong>, <a>Hong Kong Chapter, IEEE</a>, Aug. 2019</dt> 
 		<dt>- <strong>Best Poster</strong>(非凡潜力奖), <a>Didi Chuxing, Inc.</a>, Jun. 2017</dt>
 		<dt>- <strong>Ph.D. Scholarship</strong>, <a>The Hong Kong University of Science and Technology</a>, 2015-2020</dt>  
 		<dt>- <strong>Outstanding Graduate</strong>, <a>South China University of Technology</a>, Jul. 2015</dt>
 		<dt>- <strong>National Scholarship</strong> (twice), <a>South China University of Technology</a>, Oct. 2012 and Oct. 2013</dt>
 		<dt>- <strong>First Prize Student Scholarship</strong>, <a>South China University of Technology</a>, Oct. 2014 </dt>
-		<dt>- <strong>Third Grade of Hong Ping Chang Qing Scholarship</strong>, <a>South China University of Technology</a>, May. 2014</dt>
-		<dt>- <strong>Third Prizer of the IBM Master the Mainframe Contest China</strong>, Nov. 2013 </dt>
-		<dt>- <strong>First Prizer of the IBM Master the Mainframe Contest China (SCUT)</strong>, Jun. 2013 </dt>
+		<dt>- <strong>Third Grade of Hong Ping Chang Qing Scholarship</strong>, <a>South China University of Technology</a>, May 2014</dt>
+		<dt>- <strong>Third Prize of the IBM Master the Mainframe Contest China</strong>, Nov. 2013 </dt>
+		<dt>- <strong>First Prize of the IBM Master the Mainframe Contest China (SCUT)</strong>, Jun. 2013 </dt>
 	</dl>
 </div>
 <div class="blurb">	
@@ -95,4 +126,3 @@ title: Dandan's Homepage
 		<dd>2019: VLDBJ, TKDE</dd> 
 	</dl>
 </div><!-- /.blurb -->
-
