@@ -1,8 +1,57 @@
----
-layout: default
----
- <div id="container">
-        <div class="image-container">
-            <img src="/img/img.jpg" alt="" />
-        </div>
+<style>
+  .album-section {
+    margin-bottom: 40px;
+  }
+  .album-section h2 {
+    margin-bottom: 16px;
+  }
+  .album-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* 自动排列，窗口变窄时自动换行 */
+    gap: 16px;
+  }
+  .album-item {
+    margin: 0;
+    text-align: center;
+  }
+  .album-item a {
+    display: block;
+  }
+  .album-item img {
+    width: 100%;
+    aspect-ratio: 3 / 4;       /* 所有照片统一成竖版比例，排起来整齐 */
+    object-fit: cover;         /* 按比例裁剪，不会变形 */
+    border-radius: 8px;
+    display: block;
+    transition: transform 0.2s;
+  }
+  .album-item img:hover {
+    transform: scale(1.03);    /* 鼠标放上去时稍微放大 */
+  }
+  .album-item figcaption {
+    margin-top: 8px;
+    font-size: 15px;
+    color: #555;
+  }
+</style>
+
+<div class="blurb">
+  <h1>Album</h1>
+
+  {% for kid in page.kids %}
+  <div class="album-section">
+    <h2>{{ kid.name }}</h2>
+    <div class="album-grid">
+      {% for photo in kid.photos %}
+      {% capture img_path %}/img/album/{{ kid.folder }}/{{ photo.file }}{% endcapture %}
+      <figure class="album-item">
+        <a href="{{ img_path | relative_url }}" target="_blank">
+          <img src="{{ img_path | relative_url }}" alt="{{ kid.name }} {{ photo.caption }}" loading="lazy">
+        </a>
+        <figcaption>{{ photo.caption }}</figcaption>
+      </figure>
+      {% endfor %}
     </div>
+  </div>
+  {% endfor %}
+</div>
