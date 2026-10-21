@@ -20,15 +20,36 @@ kids:
         caption: "Age 1"
 ---
 <style>
+  /* ===== 整个相册页面的字体 ===== */
+  .album-page {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  }
+
+  /* 页面大标题 "Album" */
+  .blurb .album-page h1 {
+    font-size: 26px;
+    font-weight: 600;
+    margin: 0 0 24px 0;
+  }
+
   .album-section {
-    margin-bottom: 40px;
+    margin-bottom: 36px;
   }
-  .album-section h2 {
-    margin-bottom: 16px;
+
+  /* 每个孩子的标题 "My First Prince" */
+  .blurb .album-section h2 {
+    font-size: 18px;           /* 想再小一点可以改成 16px */
+    font-weight: 500;          /* 不那么粗，看起来更柔和 */
+    color: #444;
+    letter-spacing: 0.5px;
+    margin: 0 0 12px 0;
+    padding-left: 10px;
+    border-left: 3px solid #e0a96d;  /* 左侧一条小色块做装饰，不想要可以删掉 */
   }
+
   .album-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); /* 自动排列，窗口变窄时自动换行 */
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 16px;
   }
   .album-item {
@@ -40,23 +61,25 @@ kids:
   }
   .album-item img {
     width: 100%;
-    aspect-ratio: 3 / 4;       /* 所有照片统一成竖版比例，排起来整齐 */
-    object-fit: cover;         /* 按比例裁剪，不会变形 */
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
     border-radius: 8px;
     display: block;
     transition: transform 0.2s;
   }
   .album-item img:hover {
-    transform: scale(1.03);    /* 鼠标放上去时稍微放大 */
+    transform: scale(1.03);
   }
+
+  /* 照片下方的 "Age 1" */
   .album-item figcaption {
-    margin-top: 8px;
-    font-size: 15px;
-    color: #555;
+    margin-top: 6px;
+    font-size: 13px;
+    color: #888;
   }
 </style>
 
-<div class="blurb">
+<div class="blurb album-page">
   <h1>Album</h1>
 
   {% for kid in page.kids %}
