@@ -5,16 +5,22 @@ title: Dandan's Homepage
 <style>
   .bio-wrap {
     display: flex;
-    align-items: flex-start;
-    gap: 24px;                 /* 照片和文字之间的间距 */
+    align-items: stretch;      /* 让照片和文字两栏一样高 */
+    gap: 24px;
   }
   .bio-photo {
-    flex: 0 0 160px;           /* 照片区域固定宽度 */
+    flex: 0 0 160px;           /* 照片宽度 */
+    position: relative;
+    min-height: 180px;         /* 文字很少时，照片最少也有这么高 */
   }
   .bio-photo img {
-    width: 160px;
-    height: auto;
-    border-radius: 8px;        /* 圆角；想要圆形照片改成 50%，并用正方形照片 */
+    position: absolute;        /* 不让照片自身高度撑高这一栏 */
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* 按比例裁剪填满，不会被拉变形 */
+    object-position: center top; /* 裁剪时保留上方，避免把头部切掉 */
+    border-radius: 8px;
     display: block;
   }
   .bio-text {
@@ -25,6 +31,15 @@ title: Dandan's Homepage
     .bio-wrap {
       flex-direction: column;
       align-items: center;
+    }
+    .bio-photo {
+      flex: none;
+      width: 160px;
+      min-height: 0;
+    }
+    .bio-photo img {
+      position: static;
+      height: auto;
     }
   }
 </style>
